@@ -10,13 +10,20 @@ import io.cucumber.junit.CucumberOptions;
 
                  glue = "com.hrms.steps",
 
-               // dryRun=true,
+                //dryRun=true,
                  
                  monochrome = true,
                  
-                 tags="@dash"
-                 
+                 tags="@dbhw",
+
                  //strict = true
+
+plugin= {"pretty",
+		"html:target/cucumber-default-report",
+		"json:target/cucmber.json",
+		"rerun:target/failed.txt"
+		
+}
 
 )
 

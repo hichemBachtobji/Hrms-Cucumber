@@ -238,8 +238,10 @@ public class CommonMethods extends PageInitializer{
 		getWaitObject().until(ExpectedConditions.invisibilityOf(element));
 	}
 	
-	public static String TakesScreenshot(String fileName) {
+	public static byte[] TakesScreenshot(String fileName) {
 		TakesScreenshot ts = (TakesScreenshot) driver;
+		byte[] picBytes=ts.getScreenshotAs(OutputType.BYTES);
+		
 		File screen = ts.getScreenshotAs(OutputType.FILE);
 		String destinationFile=Constants.SCREENSHOT_FILEPATH+fileName+getTimeStamp() +".png";
 		
@@ -249,7 +251,7 @@ public class CommonMethods extends PageInitializer{
 			System.out.println("Cannot take screenshot");
 			//e.printStackTrace();
 		}
-		return destinationFile;
+		return picBytes;
 	}
 	
 	public static String getTimeStamp() {

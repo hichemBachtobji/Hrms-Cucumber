@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+        <th>Number</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Hrms</td>
+        <td>1</td>
+      <td>10 Jul 2020, 23:35</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.hrms.steps.DBSteps.get_last_name_from_db()</td>
+              <td>1</td>
+              <td class="duration" data-value="1168796200">1.168</td>
+              <td class="duration" data-value="1168796200">1.168</td>
+              <td class="duration" data-value="1168796200">1.168</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.hrms.steps.EmployeeSearchSteps.click_on_search_button()</td>
+              <td>2</td>
+              <td class="duration" data-value="1331355100">1.331</td>
+              <td class="duration" data-value="1331355100">1.694</td>
+              <td class="duration" data-value="2662710200">2.662</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.hrms.steps.EmployeeSearchSteps.get_last_name_from_table()</td>
+              <td>1</td>
+              <td class="duration" data-value="48972800">0.048</td>
+              <td class="duration" data-value="48972800">0.048</td>
+              <td class="duration" data-value="48972800">0.048</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.hrms.steps.EmployeeSearchSteps.user_enters_valid_employee_id(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="202882300">0.202</td>
+              <td class="duration" data-value="202882300">0.202</td>
+              <td class="duration" data-value="202882300">0.202</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.hrms.steps.EmployeeSearchSteps.user_enters_valid_employee_name_and_last_name(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="217385600">0.217</td>
+              <td class="duration" data-value="217385600">0.217</td>
+              <td class="duration" data-value="217385600">0.217</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.hrms.steps.EmployeeSearchSteps.user_is_logged_in_with_valid_admin_credentials()</td>
+              <td>2</td>
+              <td class="duration" data-value="2983874850">2.983</td>
+              <td class="duration" data-value="2983874850">3.393</td>
+              <td class="duration" data-value="5967749700">5.967</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.hrms.steps.EmployeeSearchSteps.user_navigate_to_empoyee_list_page()</td>
+              <td>2</td>
+              <td class="duration" data-value="10210179300">10.210</td>
+              <td class="duration" data-value="10210179300">10.943</td>
+              <td class="duration" data-value="20420358600">20.420</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.hrms.steps.EmployeeSearchSteps.user_see_employee_information_is_displayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="997700">0.000</td>
+              <td class="duration" data-value="997700">0.000</td>
+              <td class="duration" data-value="997700">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.hrms.steps.EmployeeSearchSteps.validate_last_name_in_UI_against_DB()</td>
+              <td>1</td>
+              <td class="duration" data-value="25981000">0.025</td>
+              <td class="duration" data-value="25981000">0.025</td>
+              <td class="duration" data-value="25981000">0.025</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.hrms.steps.EmployeeSearchSteps.verify_tavle_is_displayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="67960500">0.067</td>
+              <td class="duration" data-value="67960500">0.067</td>
+              <td class="duration" data-value="67960500">0.067</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.hrms.steps.Hooks.end(io.cucumber.java.Scenario)</td>
+              <td>6</td>
+              <td class="duration" data-value="1433086816">1.433</td>
+              <td class="duration" data-value="1433086816">1.644</td>
+              <td class="duration" data-value="8598520900">8.598</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.hrms.steps.Hooks.start()</td>
+              <td>6</td>
+              <td class="duration" data-value="5240173516">5.240</td>
+              <td class="duration" data-value="5240173516">7.834</td>
+              <td class="duration" data-value="31441041100">31.441</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.hrms.steps.addEmployeeSteps.and_added_successfully(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="45641533">0.045</td>
+              <td class="duration" data-value="45641533">0.060</td>
+              <td class="duration" data-value="136924600">0.136</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.hrms.steps.addEmployeeSteps.user_clicks_save_button()</td>
+              <td>3</td>
+              <td class="duration" data-value="2414632033">2.414</td>
+              <td class="duration" data-value="2414632033">2.888</td>
+              <td class="duration" data-value="7243896100">7.243</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.hrms.steps.addEmployeeSteps.user_enters_employee_details_and_click_on_save(io.cucumber.datatable.DataTable)</td>
+              <td>1</td>
+              <td class="duration" data-value="11958069100">11.958</td>
+              <td class="duration" data-value="11958069100">11.958</td>
+              <td class="duration" data-value="11958069100">11.958</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.hrms.steps.addEmployeeSteps.user_enters_employees_and(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="500048066">0.500</td>
+              <td class="duration" data-value="500048066">0.528</td>
+              <td class="duration" data-value="1500144200">1.500</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.hrms.steps.addEmployeeSteps.user_is_navigated_to_Add_Employee_Page()</td>
+              <td>4</td>
+              <td class="duration" data-value="3817985225">3.817</td>
+              <td class="duration" data-value="3817985225">4.457</td>
+              <td class="duration" data-value="15271940900">15.271</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.hrms.steps.addEmployeeSteps.user_logged_in_into_HRMS()</td>
+              <td>4</td>
+              <td class="duration" data-value="2383968850">2.383</td>
+              <td class="duration" data-value="2383968850">2.642</td>
+              <td class="duration" data-value="9535875400">9.535</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>18</td>
+            <td>43</td>
+            <td class="duration">2.708</td>
+            <td class="duration">31.441</td>
+            <td class="duration">1:56.470</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

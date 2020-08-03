@@ -3,6 +3,10 @@ package com.hrms.utils;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -59,6 +63,26 @@ public class ExcelUtility extends CommonMethods {
 			
 		}
 		return data;
+	}
+	
+	public static List<Map<String, String>> excelIntoListOfMaps(String filePath, String sheetName){
+		openExcel(filePath);
+		loadSheet(sheetName);
+		
+		List<Map<String, String>> list=new ArrayList<>();
+		Map<String, String> excelMap;
+		
+		for (int row=1; row<rowCount(); row++) {
+			
+			excelMap= new LinkedHashMap<>();
+			
+			for (int c=0;c<colCount(row);c++) {
+				excelMap.put(cellData(0,c), cellData(row,c));
+			}
+			list.add(excelMap);
+		}
+		return list;
+		
 	}
 
 }

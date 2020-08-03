@@ -1,7 +1,7 @@
 #author:bachtobji.hichem@gmail.com
-@dash
-Feature: Dashboard
 
+Feature: Dashboard
+@dash
 Scenario: Dashboard menu view for admin
 When user is logged in with valid admin credentials
 Then user see dashboard menu is displayed

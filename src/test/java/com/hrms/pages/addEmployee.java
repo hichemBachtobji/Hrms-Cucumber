@@ -67,7 +67,7 @@ public class addEmployee  extends CommonMethods {
 	}
 	
 	public void createLoginCr(String uName,String password ) {
-		createLoginBtn.click();
+		//createLoginBtn.click();
 		sendText(username,uName);
 		sendText(userPwd, password);
 		sendText(rePwd, password);

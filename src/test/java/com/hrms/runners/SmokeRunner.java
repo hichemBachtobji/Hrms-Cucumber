@@ -14,9 +14,15 @@ import io.cucumber.junit.CucumberOptions;
 						// implementation code
                         // if set to true no actual execution will happen
 		monochrome = true
-		//strict= true
+				,strict=true
+				,tags= "@smoke"
+				,plugin= {
+						"pretty",//prints gherkin steps in console
+						"html:target/cucumber-default-report",//create basic html report in specified location
+						"json:target/cucumber.json"
+				}
 		
 )
-public class TestRunner {
+public class SmokeRunner {
 
 }

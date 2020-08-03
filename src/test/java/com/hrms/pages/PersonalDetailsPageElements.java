@@ -25,6 +25,47 @@ public class PersonalDetailsPageElements {
 	@FindBy(id="personal_txtEmployeeId")
 	public WebElement empId;
 	
+	@FindBy(id="btnSave")
+	public WebElement editBtn;
+	
+	@FindBy(id="btnSave")
+	public WebElement saveBtn;
+	
+	@FindBy(id="personal_txtLicenNo")
+	public WebElement DLNum;
+	
+	@FindBy(id="personal_txtNICNo")
+	public WebElement SSN;
+	
+	@FindBy(id="personal_txtEmpNickName")
+	public WebElement NickName;
+	
+	@FindBy(id="personal_txtMilitarySer")
+	public WebElement MilitaryService;
+	
+	@FindBy(id="personal_txtSINNo")
+	public WebElement SINNum;
+	
+	@FindBy(id="personal_cmbMarital")
+	public WebElement MaritalStatus;
+	
+	@FindBy(id="personal_chkSmokeFlag")
+	public WebElement smoker;
+	
+	@FindBy(id="personal_txtLicExpDate")
+	public WebElement LicenseExpiryDate;
+	
+	@FindBy(id="personal_DOB")
+	public WebElement DOB;
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public PersonalDetailsPageElements() {
 		PageFactory.initElements(BaseClass.driver, this);
 	}
